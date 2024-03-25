@@ -36,11 +36,16 @@
     </section>
     <!-- UNDERCONSTRUCTION!!! -->
   </div>
-  <!-- <form id="uploadForm" enctype="multipart/form-data" class="h-96 w-72 bg-slate-500">
+  <form id="loginForm" enctype="multipart/form-data" method="post" class="h-96 w-72 bg-slate-500">
+    <input type="text" name="username" />
+    <input type="password" name="password" />
+    <input type="submit" value="Login" />
+    </form>
+  <form id="uploadForm" enctype="multipart/form-data" class="h-96 w-72 bg-slate-500">
     <input type="file" id="fileInput" name="fileInput" accept="image/*">
     <textarea id="description" name="description" placeholder="Enter description..."></textarea>
     <button type="submit">Upload</button>
-  </form> -->
+  </form>
   <footer id="footer" role="contentinfo" class="bg-gray-800 h-12 text-white pt-4 fixed z-50 bottom-0 w-full shadow-2xl">
     <div class="">
       <p>
@@ -49,6 +54,7 @@
     </div>
   </footer>
   <script async defer type="module" src="/src/main.ts"></script>
+  <script async defer type="module" src="/src/upload.ts"></script>"
 </body>
 
 </html>

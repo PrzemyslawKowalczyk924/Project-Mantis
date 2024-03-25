@@ -9,7 +9,7 @@ document.getElementById('uploadForm')?.addEventListener('submit', (event) => {
         formData.append('file', fileInput.files![0]);
         formData.append('description', descriptionInput.value);
 
-        fetch('https://example.com/upload', {
+        fetch('/admin/image', {
             method: 'POST',
             body: formData
         })
