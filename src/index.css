@@ -9,7 +9,21 @@
 }
 
 @layer components {}
-@layer utilities {}
+@layer utilities {
+  
+
+}
+
+#pages {
+  > * {
+    width: 100%;
+    display: none;
+  }
+  
+  > .active {
+    display: block;
+  }
+}
 
 body {
   text-align: center;
