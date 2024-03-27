@@ -14,12 +14,14 @@ const storage = multer.diskStorage({
   }
 })
 
-const upload = multer({ storage: storage })
+const upload = multer({ storage: storage });
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.urlencoded({ extended: true }));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/dist/index.html"));
@@ -31,4 +33,17 @@ app.listen(PORT, () => {
 
 app.post("/admin/image", upload.single('file'), (req, res) => {
   res.json({success: true});
+})
+
+app.post("/admin/login", (req, res) => {
+  console.log('req body!', req.body);
+  //console.log('czysty req', req);
+  const login = req.body.login;
+  const password = req.body.password;
+
+  if (login === "Mantis" && password === "mantismantis") {
+    res.json({success: true});
+  } else {
+    res.status(401).json({success: false});
+  }
 })

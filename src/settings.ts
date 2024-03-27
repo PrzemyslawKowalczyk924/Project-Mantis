@@ -4,8 +4,9 @@ export const select = {
         adminPages: '#adminPages',
     },
     nav: {
-        links: '.navigation__dropdown a:not(.icon)',
-        hamburgerLinks: '.hamburger__links a:not(.icon)'
+        /* links: '.navigation__dropdown a:not(.icon)', */
+        links: '#navigation a',
+        /* hamburgerLinks: '.hamburger__links a:not(.icon)' */
       },
     privacyPolicy: {
         modalAndFootHref: '.modal__and__footerPrivacy',

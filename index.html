@@ -9,11 +9,40 @@
 </head>
 
 <body>
-  <nav id="navigation" class="fixed w-full h-12 top-0 bg-white shadow-2xl left-0 z-50">
-    <img src="./src/images/Mantis LOGO.png" class="w-28 mx-auto pt-1" />
-  </nav>
-  <nav id="hamburger" class="fixed w-full h-12 top-0 bg-white z-50 md:hidden">
-    <img src="./src/images/M LOGO.png" class="w-4" />
+  <nav id="navigation" class="fixed w-full lg:h-20 top-0 bg-white shadow-2xl z-50">
+    <div class="flex items-center justify-between flex-wrap max-w-5xl mx-auto h-full">
+      <img src="./src/images/Mantis LOGO.png" class="w-44 h-14" />
+      <div class="block lg:hidden">
+        <button id="hamburgerButton"
+          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+          <svg class="bg-sky-800 fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div id="navigationLinks" class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-base lg:flex-grow text-end">
+          <a href="main" class="block mt-4 lg:inline-block lg:mt-0 text-blue-400 hover:text-blue-800 mx-4">
+            Home
+          </a>
+          <a href="offer" class="block mt-4 lg:inline-block lg:mt-0 text-blue-400 hover:text-blue-800 mx-4">
+            Oferta
+          </a>
+          <a href="gallery" class="block mt-4 lg:inline-block lg:mt-0 text-blue-400 hover:text-blue-800 mx-4">
+            Galeria
+          </a>
+        </div>
+        <div>
+          <a href="contact"
+            class="bg-sky-900 inline-flex text-base px-4 py-2 leading-none border rounded-lg text-white shadow-md hover:border-transparent hover:text-white hover:bg-blue-200 mt-4 lg:mt-0">
+            <img src="/public/icons/phone-solid.svg" class="w-4 filter brightness-0 invert mr-3" alt="phone"
+              loading="lazy" />
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
   </nav>
   <div id="pages">
     <div id="main">
@@ -50,7 +79,7 @@
         <h1 class="text-4xl font-bold text-gray-900 mt-96">contact</h1>
       </div>
     </div>
-    
+
     <div id="loginForm">
       <div class="flex min-h-full flex-col justify-center my-20 px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -62,10 +91,10 @@
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form class="space-y-6" action="#" method="POST" enctype="multipart/form-data">
             <div>
-              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+              <label for="login" class="block text-sm font-medium leading-6 text-gray-900">Login</label>
               <div class="mt-2">
-                <input id="email" name="email" type="email" autocomplete="email" required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <input id="login" name="login" type="text" required
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
               </div>
             </div>
 
@@ -77,8 +106,8 @@
                 </div>
               </div>
               <div class="mt-2">
-                <input id="password" name="password" type="password" autocomplete="current-password" required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <input id="password" name="password" type="password" required
+                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
               </div>
             </div>
 
@@ -93,21 +122,26 @@
     </div>
 
     <div id="uploadForm">
-      <form  enctype="multipart/form-data" class="max-w-sm mx-auto">
+      <form enctype="multipart/form-data" class="max-w-sm mx-auto">
         <div class="mt-44">
-          <label for="description" class="block mb-5 text-lg font-medium text-gray-900 dark:text-white">Dodaj zdjęcie i opis</label>
-          <textarea id="description" name="description" placeholder="Enter description..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com"></textarea>
+          <label for="description" class="block mb-5 text-lg font-medium text-gray-900 dark:text-white">Dodaj zdjęcie i
+            opis</label>
+          <textarea id="description" name="description" placeholder="Enter description..."
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="name@flowbite.com"></textarea>
         </div>
         <div class="mb-5">
           <div class="flex items-center justify-center w-full">
-            <label for="fileInput" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+            <label for="fileInput"
+              class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
               <div class="flex flex-col items-center justify-center pt-5 pb-6">
                 <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                 </svg>
-                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span>
+                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to
+                    upload</span>
                   or drag and drop</p>
                 <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
               </div>
@@ -115,10 +149,11 @@
             </label>
           </div>
         </div>
-        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+        <button type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
       </form>
     </div>
-   
+
   </div>
   <footer id="footer" role="contentinfo" class="bg-gray-800 h-12 text-white pt-4 fixed z-50 bottom-0 w-full shadow-2xl">
     <div class="">
