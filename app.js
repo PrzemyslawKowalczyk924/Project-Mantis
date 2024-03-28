@@ -35,7 +35,7 @@ app.post("/admin/image", upload.single('file'), (req, res) => {
   res.json({success: true});
 })
 
-app.post("/admin/login", (req, res) => {
+app.post("/admin/login", upload.none(), (req, res) => {
   console.log('req body!', req.body);
   //console.log('czysty req', req);
   const login = req.body.login;

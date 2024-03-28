@@ -6,7 +6,7 @@ import './index.css'
 import { select, classNames } from './settings.js';
 
 interface App {
-    hamburgerDropDownMenu: HTMLElement;
+    hamburgerDropDownMenu: HTMLElement | undefined;
     hamburgerButton: HTMLElement | undefined;
     pages: HTMLElement[];
     navLinks: NodeListOf<HTMLAnchorElement> | undefined;
@@ -24,6 +24,7 @@ export const app: App = {
     hamburgerButton: undefined,
     privacyPolicyLinks: undefined,
     isLoggedIn: false,
+    hamburgerDropDownMenu: undefined,
 
     initPages: function () {
         const thisApp = this;
@@ -36,8 +37,6 @@ export const app: App = {
         }
 
         thisApp.navLinks = document.querySelectorAll(select.nav.links);
-        console.log("navLinks", thisApp.navLinks);
-        /* thisApp.hamburgerLinks = document.querySelectorAll(select.nav.hamburgerLinks); */
         thisApp.privacyPolicyLinks = document.querySelectorAll(select.privacyPolicy.modalAndFootHref);
 
 
@@ -48,7 +47,6 @@ export const app: App = {
         if (!url.includes('https')) {
             window.location.href = 'https://www.mantis-ma.pl';
         } */
-
         let pageMatchingHash = thisApp.pages[0].id;
 
         for (let page of thisApp.pages) {
@@ -78,38 +76,13 @@ export const app: App = {
             });
         }
 
-        /*  for (let link of thisApp.hamburgerLinks) {
-             link.addEventListener('click', function (event) {
-                 const clickedHambElement = this;
-                 event.preventDefault();
- 
-                 if (clickedHambElement !== null) {
-                     const id = clickedHambElement.getAttribute('href')?.replace('#', '') ?? '';
- 
-                     window.location.hash = '#/' + id;
-                     thisApp.activatePage(id);
- 
-                     const hamburgerDropDown = document.getElementById('hamburgerDropDown');
-                     if (hamburgerDropDown !== null) {
-                         hamburgerDropDown.style.display = 'none';
-                     }
-                 }
-             });
-         } */
-
         const hamburgerButton = document.getElementById('hamburgerButton') as HTMLElement;
         const hamburgerDropDownMenu = document.getElementById('navigationLinks') as HTMLElement;
-
-        hamburgerButton.addEventListener('click', function (event) {
-            event.preventDefault();
-            const clickedButton = this;
-            if (clickedButton) {
-                hamburgerDropDownMenu.style.display = 'block';
-            } else {
-                // otherwise
-            }
+        
+        hamburgerButton.addEventListener('click', () => {
+            hamburgerDropDownMenu.classList.toggle('hidden');
         });
-
+        
         for (let link of thisApp.privacyPolicyLinks) {
             link.addEventListener('click', function (event: MouseEvent): void {
                 const clickedPrivacyLink = this;
@@ -167,9 +140,7 @@ export const app: App = {
             if (login.value && password.value) {
                 formData.append('login', login.value);
                 formData.append('password', password.value);
-                //console.log('login i password', login.value, password.value);
-                //console.log('formData + body', formData);
-                //debugger
+             
                 fetch('/admin/login', {
                     method: 'POST',
                     body: formData
@@ -195,15 +166,12 @@ export const app: App = {
                         }
                     });
             }
-
-            // Tutaj możesz dodać logikę uwierzytelniania, np. sprawdzenie poprawności danych logowania
-
-            // Jeśli uwierzytelnienie jest poprawne, pokaż formularz uploadForm
+        
             uploadForm.style.display = 'block';
         });
 
-    }
-
+    },
+    
 };
 
 app.init();
