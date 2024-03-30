@@ -97,9 +97,25 @@
 
   .backgroundForHero {
     background-color: #C5E7F1;
+    background-image: url(/public/uploads/statek.png);
     background-size: 50%;
     background-position: right;
-    border-radius: 41% 32% 25% 36% / 55% 0% 0% 32%,
+    border-radius: 41% 32% 25% 36% / 55% 0% 0% 32%;
+    background-repeat: no-repeat;
+  }
+
+  .radiusForShip {
+    border-radius: 41% 32% 25% 36% / 55% 0% 0% 32%;
+  }
+
+  .shadowTopOnly {
+    box-shadow: 0 -5px 15px -10px #333;
+    /* box-shadow: 0 -10px 20px -5px rgba(52, 90, 216, 0.75); */
+  }
+
+  .hover-zmiana {
+    content: url('/public/uploads/statek.png');
+    border-radius: 100%;
   }
 
 }

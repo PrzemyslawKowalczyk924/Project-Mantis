@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'navy-blue': '#C5E7F1',
+        'navy-strongBlue': '#1A3C73',
       },
       borderRadius: {
         'borderRadiusForShip': '41% 32% 25% 36% / 55% 0% 0% 32%',
