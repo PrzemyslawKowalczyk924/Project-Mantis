@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'navy-blue': '#C5E7F1',
+        'navy-middleBlue': '#505F98',
         'navy-strongBlue': '#1A3C73',
       },
       borderRadius: {
@@ -18,6 +19,8 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+  ],
 }
 

@@ -1,4 +1,5 @@
-import './index.css'
+import './index.css';
+import 'flowbite';
 //import tailwindcss from 'tailwindcss'
 
 // navigation

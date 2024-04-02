@@ -90,6 +90,24 @@
     font-display: swap;
     src: url(/src/fonts/Roboto-BlackItalic.ttf) format('truetype');
   }
+  @font-face {
+    font-family: 'bornamedium';
+    src: url(/src/fonts/borna-medium-webfont.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'bornamedium';
+    src: url(borna-medium-webfont.eot);
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'bornamedium';
+    src: url(/src/fonts/borna-medium-webfont.woff) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 @layer components {}
@@ -108,9 +126,30 @@
     border-radius: 41% 32% 25% 36% / 55% 0% 0% 32%;
   }
 
+  .radiusForOfferTitles {
+    border-radius: 25% 25% 50% 25% / 0% 0% 125% 0%;
+    /* box-shadow: 0 -10px 20px -5px rgba(52, 90, 216, 0.75); */
+    /* box-shadow: 0 1px 20px -5px rgba(59, 105, 255, 0.75); */
+    box-shadow: 0 1px 20px -5px rgba(80, 95, 152);
+  }
+  
+  .radiusForOfferSpecial {
+    /* border-radius: 40% 40% 25% 25% / 10% 10% 0% 0%; */
+    /* clip-path: ellipse(50% 10% at 50% 50%); */
+    clip-path: ellipse(100% 50% at 50% 60%);
+  }
+  
+  .shadowForPictures {
+    /* BEZCZYNNE-BEZUŻYCIOA, ALE MOŻE SIĘ WYKORZYSTA? */
+    box-shadow: 0 1px 20px -5px rgba(26, 60, 115);
+  }
+
   .shadowTopOnly {
     box-shadow: 0 -5px 15px -10px #333;
-    /* box-shadow: 0 -10px 20px -5px rgba(52, 90, 216, 0.75); */
+  }
+
+  .shadowHalogenEffect {
+    box-shadow: 0 -10px 20px -5px rgba(52, 90, 216, 0.75);
   }
 
   .hover-zmiana {

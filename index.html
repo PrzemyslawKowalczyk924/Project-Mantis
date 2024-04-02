@@ -8,9 +8,9 @@
   <link rel="icon" type="image/svg+xml" href="./src/images/M LOGO.png">
 </head>
 
-<body class="font-[Roboto]">
-  <nav id="navigation" class="fixed w-full lg:h-20 top-0 bg-white shadow-2xl z-50 lg:px-12">
-    <div class="flex items-center justify-around flex-wrap max-w-5xl lg:mx-auto h-full">
+<body class="font-[bornamedium]">
+  <nav id="navigation" class="fixed w-full min-h-20 lg:h-20 top-0 bg-white shadow-2xl z-50 lg:px-12">
+    <div class="flex items-center mt-2 lg:mt-0 justify-around flex-wrap max-w-5xl lg:mx-auto h-full">
       <img src="./src/images/Mantis LOGO.png" class="p-2 w-44 h-14" />
       <div class="block lg:hidden">
         <button id="hamburgerButton"
@@ -23,19 +23,19 @@
       </div>
       <div id="navigationLinks" class="w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-base lg:flex-grow text-center lg:text-end">
-          <a href="main" class="block mt-4 lg:inline-block lg:mt-0 text-blue-400 hover:text-blue-800 mx-4">
+          <a href="main" class="block my-12 lg:inline-block lg:my-0 text-blue-400 hover:text-blue-800 mx-4">
             Home
           </a>
-          <a href="offer" class="block mt-4 lg:inline-block lg:mt-0 text-blue-400 hover:text-blue-800 mx-4">
+          <a href="offer" class="block my-12 lg:inline-block lg:my-0 text-blue-400 hover:text-blue-800 mx-4">
             Oferta
           </a>
-          <a href="gallery" class="block mt-4 lg:inline-block lg:mt-0 text-blue-400 hover:text-blue-800 mx-4">
+          <a href="gallery" class="block my-12 lg:inline-block lg:my-0 text-blue-400 hover:text-blue-800 mx-4">
             Galeria
           </a>
         </div>
-        <div>
+        <div class="mb-10 lg:mb-0">
           <a href="contact"
-            class="bg-navy-strongBlue inline-flex text-base px-4 py-2 leading-none border rounded-lg text-white shadow-md hover:border-transparent hover:text-white hover:bg-gray-800 mt-4 lg:mt-0">
+            class="bg-navy-strongBlue inline-flex text-base px-4 py-2 leading-none border rounded-lg text-white shadow-md hover:border-transparent hover:text-white hover:bg-navy-middleBlue">
             <img src="/public/icons/phone-solid.svg" class="w-4 filter brightness-0 invert mr-3" alt="phone"
               loading="lazy" />
             Kontakt
@@ -93,20 +93,23 @@
           <img class="radiusForShip opacity-50 md:opacity-100" src="/public/uploads/statek.png" />
         </div>
       </section>
-      <section class="max-w-5xl bg-white lg:bg-transparent mx-auto relative grid grid-cols-2 grid-rows-1 gap-0 z-0 shadowTopOnly lg:shadow-none">
+      <section
+        class="max-w-5xl bg-white lg:bg-transparent mx-auto relative grid grid-cols-2 grid-rows-1 gap-0 z-0 shadowTopOnly lg:shadow-none">
         <div class="col-span-2 lg:col-span-1">
-          <h1 class="text-center font-semibold text-3xl mt-32">DOŚWIADCZENIE</h1>
+          <h1 class="text-center font-semibold text-3xl mt-32 mb-10">Doświadczenie</h1>
           <img class="lg:hidden w-72 h-72 mx-auto hover:hover-zmiana" src="public/uploads/dyplom.png" />
-          <p class="text-base p-5 max-w-lg mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <p class="text-base text-navy-strongBlue text-justify p-5 max-w-lg mx-auto">Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit.
             Donec bibendum elit non tellus ornare eleifend. Maecenas velit nisl, tristique sed orci sagittis, imperdiet
             finibus elit.
             Praesent viverra eget turpis at pretium. Sed pellentesque ipsum vitae sem posuere, vel semper metus maximus.
             Donec bibendum augue sit amet congue feugiat. Suspendisse pretium finibus justo vitae tempus.
             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
           </p>
-          <div class="grid grid-cols-2 grid-rows-1 gap-6 p-8">
+          <div class="grid grid-cols-2 grid-rows-1 gap-6 p-8 max-w-lg mx-auto">
             <div class="flex flex-col justify-center items-start mb-7">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke='#1A3C73' class="w-12 h-12">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke='#1A3C73'
+                class="w-12 h-12">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
               </svg>
               <h1 class="text-xl text-navy-strongBlue my-2">Nagłówek 1</h1>
@@ -116,7 +119,8 @@
               </p>
             </div>
             <div class="flex flex-col justify-center items-start mb-7">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="#1A3C73" class="w-12 h-12">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="#1A3C73"
+                class="w-12 h-12">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
               </svg>
               <h1 class="text-xl text-navy-strongBlue my-2">Nagłówek 2</h1>
@@ -127,21 +131,277 @@
             </div>
           </div>
         </div>
-        <div class="hidden lg:block lg:col-span-1">
+        <div class="hidden lg:block lg:col-span-1 my-auto">
           <img src="public/uploads/dyplom.png" />
         </div>
       </section>
 
+      <section class="grid grid-cols-2 grid-rows-1 gap-0 max-w-5xl mx-auto bg-white relative z-20">
+        <div class="hidden lg:block lg:col-span-1 my-auto">
+          <img src="public/uploads/spawacz.png" />
+        </div>
+        <div class="col-span-2 lg:col-span-1 text-left flex items-center justify-center flex-col">
+          <h1 class="text-center font-semibold text-3xl my-5">Precyzja</h1>
+          <img class="lg:hidden w-72 h-72 mx-auto hover:hover-zmiana" src="public/uploads/spawacz.png" />
+          <p class="text-base text-navy-strongBlue p-5 text-justify max-w-lg mx-auto">Curabitur interdum felis sit amet
+            mattis lacinia.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Proin tempus nisi nec ante scelerisque, at facilisis sem molestie.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+            Vivamus vestibulum consectetur lectus, vitae pellentesque orci tristique eu.
+            Donec eget ligula vitae dui elementum condimentum.
+            Sed dapibus elementum metus, et mattis velit. Maecenas vestibulum eu quam vel semper.
+          </p>
+          <div class="w-full text-center mt-5 my-10 lg:pl-5 lg:text-left">
+            <a href="offer"
+              class="bg-navy-strongBlue inline-flex text-base px-4 py-2 lg:mr-10 leading-none border rounded-lg text-white shadow-md hover:border-transparent hover:text-white hover:bg-gray-800 mt-4 lg:mt-0">
+              Obejrzyj galerię
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="max-w-5xl bg-white lg:bg-transparent mx-auto relative grid grid-cols-2 grid-rows-1 gap-0 z-0 shadowTopOnly lg:shadow-none">
+        <div class="col-span-2 lg:col-span-1">
+          <h1 class="text-center font-semibold text-3xl mt-32 mb-10">Profesjonalizm</h1>
+          <img class="lg:hidden w-72 h-72 mx-auto hover:hover-zmiana" src="public/uploads/team.png" />
+          <p class="text-base text-navy-strongBlue text-justify p-5 max-w-lg mx-auto">Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit.
+            Donec bibendum elit non tellus ornare eleifend. Maecenas velit nisl, tristique sed orci sagittis, imperdiet
+            finibus elit.
+            Praesent viverra eget turpis at pretium. Sed pellentesque ipsum vitae sem posuere, vel semper metus maximus.
+            Donec bibendum augue sit amet congue feugiat. Suspendisse pretium finibus justo vitae tempus.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+          </p>
+          <div class="grid grid-cols-2 grid-rows-1 gap-6 p-8 max-w-lg mx-auto">
+            <div class="flex flex-col justify-center items-start mb-7">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke='#1A3C73'
+                class="w-12 h-12">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <h1 class="text-xl text-navy-strongBlue my-2">Nagłówek 1</h1>
+              <p class="text-xs text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec bibendum elit non tellus ornare eleifend.
+              </p>
+            </div>
+            <div class="flex flex-col justify-center items-start mb-7">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5" stroke="#1A3C73"
+                class="w-12 h-12">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+              <h1 class="text-xl text-navy-strongBlue my-2">Nagłówek 2</h1>
+              <p class="text-xs text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec bibendum elit non tellus ornare eleifend.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:block lg:col-span-1 my-auto">
+          <img src="public/uploads/team.png" />
+        </div>
+      </section>
     </div>
     <div id="offer">
-      <div class="h-screen">
-        <h1 class="text-4xl font-bold text-gray-900 mt-96">OFFER</h1>
-      </div>
+      <section class="relative top-20 grid grid-cols-1 grid-rows-10 gap-0">
+        <div class="row-span-2 grid grid-cols-5 grid-rows-1 gap-0">
+          <h1 class="text-4xl lg:text-5xl pt-20 px-10 sm:px-0 text-navy-strongBlue font-bold lg:font-medium col-span-5 sm:col-span-4 lg:col-span-3 bg-navy-blue radiusForOfferTitles">
+            Nasze usługi obejmują:</h1>
+        </div>
+        <div class="row-span-4 lg:row-span-5 self-center">
+          <!-- AKORDEON -->
+          <div class="max-w-5xl mx-auto my-14 text-left text-navy-middleBlue" id="accordion-collapse"
+            data-accordion="collapse">
+            <h2 id="accordion-collapse-heading-1">
+              <button type="button"
+                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border-b-2 border-navy-blue focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
+                aria-controls="accordion-collapse-body-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5"
+                  stroke="#1A3C73" class="w-12 h-12">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                <span class="mr-auto">Spawanie</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5 5 1 1 5" />
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+              <div class="p-5 border-b-2 border-navy-blue dark:border-gray-700 dark:bg-gray-900">
+                <p class="mb-2  dark:text-gray-400">Flowbite is an open-source library of interactive components built
+                  on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                <p class=" dark:text-gray-400">Check out this guide to learn how to <a
+                    href="/docs/getting-started/introduction/"
+                    class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing
+                  websites even faster with components on top of Tailwind CSS.</p>
+              </div>
+            </div>
+            <h2 id="accordion-collapse-heading-2">
+              <button type="button"
+                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right  border-b-2 border-navy-blue focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
+                aria-controls="accordion-collapse-body-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5"
+                  stroke="#1A3C73" class="w-12 h-12">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                <span class="items-start mr-auto">Gięcie</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5 5 1 1 5" />
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+              <div class="p-5 border-b-2 border-navy-blue dark:border-gray-700">
+                <p class="mb-2  dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma
+                  software so everything you see in the library has a design equivalent in our Figma file.</p>
+                <p class=" dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/"
+                    class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the
+                  utility classes from Tailwind CSS and components from Flowbite.</p>
+              </div>
+            </div>
+            <h2 id="accordion-collapse-heading-3">
+              <button type="button"
+                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border-b-2 border-navy-blue focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                aria-controls="accordion-collapse-body-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5"
+                  stroke="#1A3C73" class="w-12 h-12">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                <span class="items-start mr-auto">Montaż Konstrukcji Stalowych</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5 5 1 1 5" />
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+              <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                <p class="mb-2  dark:text-gray-400">The main difference is that the core components from Flowbite are
+                  open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that
+                  Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.
+                </p>
+                <p class="mb-2  dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro,
+                  and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.
+                </p>
+                <p class="mb-2  dark:text-gray-400">Learn more about these technologies:</p>
+                <ul class="ps-5  list-disc dark:text-gray-400">
+                  <li><a href="https://flowbite.com/pro/"
+                      class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                  <li><a href="https://tailwindui.com/" rel="nofollow"
+                      class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+                </ul>
+              </div>
+            </div>
+            <h2 id="accordion-collapse-heading-4">
+              <button type="button"
+                class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border-b-2 border-navy-blue focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                data-accordion-target="#accordion-collapse-body-4" aria-expanded="false"
+                aria-controls="accordion-collapse-body-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="5"
+                  stroke="#1A3C73" class="w-12 h-12">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                <span class="items-start mr-auto">Usługi Okładzin Jachtowych i Konstrukcji Stalowych</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5 5 1 1 5" />
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-collapse-body-4" class="hidden" aria-labelledby="accordion-collapse-heading-4">
+              <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                <p class="mb-2  dark:text-gray-400">The main difference is that the core components from Flowbite are
+                  open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that
+                  Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.
+                </p>
+                <p class="mb-2  dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro,
+                  and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.
+                </p>
+                <p class="mb-2  dark:text-gray-400">Learn more about these technologies:</p>
+                <ul class="ps-5  list-disc dark:text-gray-400">
+                  <li><a href="https://flowbite.com/pro/"
+                      class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                  <li><a href="https://tailwindui.com/" rel="nofollow"
+                      class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- AKORDEON -->
+
+        <div class="flex flex-col justify-center items-center row-span-4 lg:row-span-3 min-h-96 bg-navy-strongBlue radiusForOfferSpecial">
+          <h2 class="text-xl text-white mb-10">Dodatkowo realizujemy indywidualne projekty na zamówienie</h2>
+          <a href="contact"
+            class=" bg-white font-medium shadowHalogenEffect w-44 h-16 inline-flex text-base items-center justify-center px-4 py-2 leading-none border-2 border-navy-strongBlue rounded-lg text-navy-strongBlue shadow-md hover:border-transparent hover:text-white hover:bg-navy-middleBlue mt-4 lg:mt-0">
+            Zapytaj o wycenę
+          </a>
+        </div>
+      </section>
     </div>
     <div id="gallery">
-      <div class="h-screen">
-        <h1 class="text-4xl font-bold text-gray-900 mt-96">gallery</h1>
+      <section class="relative top-20">
+        <div class="row-span-2 min-h-56 lg:min-h-64 grid grid-cols-5 grid-rows-1 gap-0">
+          <h1 class="text-4xl lg:text-5xl pt-20 px-10 sm:px-0 text-navy-strongBlue font-bold lg:font-medium col-span-5 sm:col-span-4 lg:col-span-3 bg-navy-blue radiusForOfferTitles">Galeria</h1>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto my-28">
+          <div class="grid gap-4">
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/uchwyt.jpg" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/podpórka.jpg" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-1.jpg" alt="">
+              </div>
+          </div>
+          <div class="grid gap-4">
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-2.jpg" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-3.jpg" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-4.jpg" alt="">
+              </div>
+          </div>
+          <div class="grid gap-4">
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detale.jpg" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-5.png" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-6.png" alt="">
+              </div>
+          </div>
+          <div class="grid gap-4">
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-7.png" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/boat-worker.jpg" alt="">
+              </div>
+              <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                  <img class="h-auto max-w-full rounded-lg" src="/public/uploads/detal-8.png" alt="">
+              </div>
+          </div>
       </div>
+      </section>
     </div>
     <div id="contact">
       <div class="h-screen">
@@ -204,15 +464,15 @@
             <label for="fileInput"
               class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
               <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <svg class="w-8 h-8 mb-4  dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 20 16">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                 </svg>
-                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to
+                <p class="mb-2 text-sm  dark:text-gray-400"><span class="font-semibold">Click to
                     upload</span>
                   or drag and drop</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                <p class="text-xs  dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
               </div>
               <input id="fileInput" type="file" class="hidden" />
             </label>
@@ -224,7 +484,7 @@
     </div>
 
   </div>
-  <footer class="bg-white dark:bg-gray-900 shadowTopOnly">
+  <footer class="bg-white top-20 relative dark:bg-gray-900 shadowTopOnly z-20">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
@@ -235,7 +495,7 @@
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class=" dark:text-gray-400 font-medium">
               <li class="mb-4">
                 <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
               </li>
@@ -246,7 +506,7 @@
           </div>
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class=" dark:text-gray-400 font-medium">
               <li class="mb-4">
                 <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
               </li>
@@ -257,7 +517,7 @@
           </div>
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class=" dark:text-gray-400 font-medium">
               <li class="mb-4">
                 <a href="#" class="hover:underline">Privacy Policy</a>
               </li>
@@ -270,11 +530,11 @@
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/"
-            class="hover:underline">Flowbite™</a>. All Rights Reserved.
+        <span class="text-sm  sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/"
+            class="hover:underline">Przemysław Kowalczyk™</a>. All Rights Reserved.
         </span>
         <div class="flex mt-4 sm:justify-center sm:mt-0">
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+          <a href="#" class=" hover:text-gray-900 dark:hover:text-white">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 8 19">
               <path fill-rule="evenodd"
@@ -283,7 +543,7 @@
             </svg>
             <span class="sr-only">Facebook page</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class=" hover:text-gray-900 dark:hover:text-white ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 21 16">
               <path
@@ -291,7 +551,7 @@
             </svg>
             <span class="sr-only">Discord community</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class=" hover:text-gray-900 dark:hover:text-white ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 20 17">
               <path fill-rule="evenodd"
@@ -300,7 +560,7 @@
             </svg>
             <span class="sr-only">Twitter page</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class=" hover:text-gray-900 dark:hover:text-white ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 20 20">
               <path fill-rule="evenodd"
@@ -309,7 +569,7 @@
             </svg>
             <span class="sr-only">GitHub account</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class=" hover:text-gray-900 dark:hover:text-white ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 20 20">
               <path fill-rule="evenodd"
