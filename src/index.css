@@ -139,9 +139,9 @@
     clip-path: ellipse(100% 50% at 50% 60%);
   }
   
-  .shadowForPictures {
+  .shadowForNavyElements {
     /* BEZCZYNNE-BEZUŻYCIOA, ALE MOŻE SIĘ WYKORZYSTA? */
-    box-shadow: 0 1px 20px -5px rgba(26, 60, 115);
+    box-shadow: 0 5px 15px -5px rgba(26, 60, 115);
   }
 
   .shadowTopOnly {
