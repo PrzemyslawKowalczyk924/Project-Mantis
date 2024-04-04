@@ -17,6 +17,7 @@ interface App {
     init: () => void;
     isLoggedIn: boolean;
     initLoginForm: () => void;
+    initGallery: () => void;
 }
 
 export const app: App = {
@@ -81,11 +82,11 @@ export const app: App = {
 
         const hamburgerButton = document.getElementById('hamburgerButton') as HTMLElement;
         const hamburgerDropDownMenu = document.getElementById('navigationLinks') as HTMLElement;
-        
+
         hamburgerButton.addEventListener('click', () => {
             hamburgerDropDownMenu.classList.toggle('hidden');
         });
-        
+
         for (let link of thisApp.privacyPolicyLinks) {
             link.addEventListener('click', function (event: MouseEvent): void {
                 const clickedPrivacyLink = this;
@@ -143,7 +144,7 @@ export const app: App = {
             if (login.value && password.value) {
                 formData.append('login', login.value);
                 formData.append('password', password.value);
-             
+
                 fetch('/admin/login', {
                     method: 'POST',
                     body: formData
@@ -169,13 +170,54 @@ export const app: App = {
                         }
                     });
             }
-        
+
             uploadForm.style.display = 'block';
         });
 
     },
-    
+
+    initGallery: () => {
+
+        fetch('/image')
+            .then(response => {
+                if (response.ok) {
+                    //respone text????
+                    return response.json();
+                } else {
+                    throw new Error('Upload failed');
+                }
+            })
+            .then(data => {
+                const pictureWrapper = document.getElementById('pictureWrapper');
+                if (pictureWrapper !== null) {
+
+                    pictureWrapper.insertAdjacentHTML('beforeend', `
+                    <div class="grid gap-4">
+                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[0]}" alt="">
+                        </div>
+                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[1]}" alt="">
+                        </div>
+                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[2]}" alt="">
+                        </div>
+                    </div>`
+                    ) 
+
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const messageElement = document.getElementById('message');
+                if (messageElement) {
+                    messageElement.innerHTML = `<p>Error occurred: ${error.message}</p>`;
+                }
+            });
+    }
+
 };
 
 app.init();
 app.initLoginForm();
+app.initGallery();

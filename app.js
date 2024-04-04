@@ -23,17 +23,22 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static(path.join(__dirname, '/dist')));
 app.use(express.urlencoded({ extended: true }));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/dist/index.html"));
-});
 
 app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}`);
+  console.log(`Server is running on PORT ${PORT}`);
 });
 
 app.post("/admin/image", upload.single('file'), (req, res) => {
   res.json({success: true});
-})
+});
+
+app.get('/image', (req, res) => {
+  const imageFolder = './public/uploads';
+  const fs = require('fs');
+  
+  const files = fs.readdirSync(imageFolder);
+  res.json(files);
+});
 
 app.post("/admin/login", upload.none(), (req, res) => {
   console.log('req body!', req.body);
@@ -46,4 +51,8 @@ app.post("/admin/login", upload.none(), (req, res) => {
   } else {
     res.status(401).json({success: false});
   }
-})
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/dist/index.html"));
+});

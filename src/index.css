@@ -138,6 +138,14 @@
     /* clip-path: ellipse(50% 10% at 50% 50%); */
     clip-path: ellipse(100% 50% at 50% 60%);
   }
+
+  .afterBackgroundStretch::after {
+    width: 2000px;
+  }
+
+  .radiusForContact {
+    border-radius: 25% 25% 25% 25% / 0% 35% 35% 0%;
+  }
   
   .shadowForNavyElements {
     /* BEZCZYNNE-BEZUŻYCIOA, ALE MOŻE SIĘ WYKORZYSTA? */
