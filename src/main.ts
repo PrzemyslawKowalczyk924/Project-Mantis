@@ -188,22 +188,23 @@ export const app: App = {
                 }
             })
             .then(data => {
+
                 const pictureWrapper = document.getElementById('pictureWrapper');
                 if (pictureWrapper !== null) {
 
+                    console.log('data', data)
+                    const imagesHTML = data.map((image: { value: any; }) => `
+                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${image}" alt="">
+                        </div>
+                    `).join('');
+
+
                     pictureWrapper.insertAdjacentHTML('beforeend', `
-                    <div class="grid gap-4">
-                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
-                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[0]}" alt="">
-                        </div>
-                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
-                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[1]}" alt="">
-                        </div>
-                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
-                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[2]}" alt="">
-                        </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto my-28 grid-flow-row">
+                        ${imagesHTML}
                     </div>`
-                    ) 
+                    )
 
                 }
             })
@@ -221,3 +222,10 @@ export const app: App = {
 app.init();
 app.initLoginForm();
 app.initGallery();
+
+/* <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+    <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[1]}" alt="">
+</div>
+<div class="border-2 border-navy-strongBlue rounded-xl h-fit">
+    <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[2]}" alt="">
+</div> */

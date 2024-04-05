@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, '/dist')));
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
@@ -42,7 +42,7 @@ app.get('/image', (req, res) => {
 
 app.post("/admin/login", upload.none(), (req, res) => {
   console.log('req body!', req.body);
-  //console.log('czysty req', req);
+  
   const login = req.body.login;
   const password = req.body.password;
 
