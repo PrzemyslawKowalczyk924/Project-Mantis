@@ -188,26 +188,37 @@ export const app: App = {
                 }
             })
             .then(data => {
-
+               
                 const pictureWrapper = document.getElementById('pictureWrapper');
                 if (pictureWrapper !== null) {
-
-                    console.log('data', data)
-                    const imagesHTML = data.map((image: { value: any; }) => `
-                        <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
-                            <img class="h-auto max-w-full rounded-lg" src="/uploads/${image}" alt="">
-                        </div>
-                    `).join('');
-
-
+                    console.log('data', data);
+                    
+                    const imagesHTML = data.reduce((accumulator: string[], image: any, index: number) => {
+                        if (index % 3 === 0) {
+                            accumulator.push('<div class="grid gap-4 rounded-xl">');
+                        }
+                    
+                        const imageSrc = `/uploads/${image}`;
+                    
+                        accumulator.push(`
+                            <img class="h-auto max-w-full border-2 border-navy-strongBlue rounded-lg" src="${imageSrc}" alt="">
+                        `);
+                    
+                        if ((index + 1) % 3 === 0 || index === data.length - 1) {
+                            accumulator.push('</div>');
+                        }
+                    
+                        return accumulator;
+                    }, []).join('');
+            
                     pictureWrapper.insertAdjacentHTML('beforeend', `
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto my-28 grid-flow-row">
-                        ${imagesHTML}
-                    </div>`
-                    )
-
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto my-20">
+                            ${imagesHTML}
+                        </div>`
+                    );
                 }
             })
+            
             .catch(error => {
                 console.error('Error:', error);
                 const messageElement = document.getElementById('message');
