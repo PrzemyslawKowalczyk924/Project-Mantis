@@ -188,37 +188,24 @@ export const app: App = {
                 }
             })
             .then(data => {
-               
+
                 const pictureWrapper = document.getElementById('pictureWrapper');
                 if (pictureWrapper !== null) {
-                    console.log('data', data);
-                    
-                    const imagesHTML = data.reduce((accumulator: string[], image: any, index: number) => {
-                        if (index % 3 === 0) {
-                            accumulator.push('<div class="grid gap-4 rounded-xl">');
-                        }
-                    
-                        const imageSrc = `/uploads/${image}`;
-                    
-                        accumulator.push(`
-                            <img class="h-auto max-w-full border-2 border-navy-strongBlue rounded-lg" src="${imageSrc}" alt="">
-                        `);
-                    
-                        if ((index + 1) % 3 === 0 || index === data.length - 1) {
-                            accumulator.push('</div>');
-                        }
-                    
-                        return accumulator;
-                    }, []).join('');
-            
+
+                    console.log('data', data)
+                    const imagesHTML = data.map((image: { value: any; }) => `
+                        <img class="border-2 border-navy-strongBlue rounded-xl first:mt-0 mt-5 lg:mt-8" src="/uploads/${image}" alt="">
+                    `).join('');
+
+
                     pictureWrapper.insertAdjacentHTML('beforeend', `
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto my-20">
-                            ${imagesHTML}
-                        </div>`
-                    );
+                    <div class="my-20 max-w-5xl mx-auto columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4">
+                        ${imagesHTML}
+                    </div>`
+                    )
+
                 }
             })
-            
             .catch(error => {
                 console.error('Error:', error);
                 const messageElement = document.getElementById('message');
@@ -233,10 +220,3 @@ export const app: App = {
 app.init();
 app.initLoginForm();
 app.initGallery();
-
-/* <div class="border-2 border-navy-strongBlue rounded-xl h-fit">
-    <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[1]}" alt="">
-</div>
-<div class="border-2 border-navy-strongBlue rounded-xl h-fit">
-    <img class="h-auto max-w-full rounded-lg" src="/uploads/${data[2]}" alt="">
-</div> */

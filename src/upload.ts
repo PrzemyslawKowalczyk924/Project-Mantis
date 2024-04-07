@@ -15,22 +15,23 @@ document.getElementById('uploadForm')?.addEventListener('submit', (event) => {
         })
         .then(response => {
             if (response.ok) {
+               
                 return response.json();
             } else {
                 throw new Error('Upload failed');
             }
         })
         .then(data => {
-            const messageElement = document.getElementById('message');
+            const messageElement = document.getElementById('uploadForm');
             if (messageElement) {
-                messageElement.innerHTML = `<p>Upload successful. Server response: ${JSON.stringify(data)}</p>`;
+                messageElement.innerHTML = `<p class="">Zdjęcie dodano pomyślnie: ${JSON.stringify(data)}</p>`;
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            const messageElement = document.getElementById('message');
+            const messageElement = document.getElementById('uploadForm');
             if (messageElement) {
-                messageElement.innerHTML = `<p>Error occurred: ${error.message}</p>`;
+                messageElement.innerHTML = `<p class="">Wystąpił błąd: ${error.message}</p>`;
             }
         });
     } else {
