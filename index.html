@@ -359,28 +359,7 @@
             class="text-4xl lg:text-5xl pt-20 px-10 sm:px-0 text-navy-strongBlue font-bold lg:font-medium col-span-5 sm:col-span-4 lg:col-span-3 bg-navy-blue radiusForOfferTitles">
             Galeria</h1>
         </div>
-        <div id="pictureWrapper" class="p-5 lg:p-0">
-          <!-- <div class="columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not
-            (:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8">
-                <img class="rounded-lg" src="/public/uploads/boat-worker.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-1.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-2.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-3.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-4.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-5.png" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-6.png" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-7.png" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-8.png" alt="">
-                <img class="rounded-lg" src="/public/uploads/detale.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/podpórka.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/uchwyt.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/uchwyt.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/uchwyt.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/uchwyt.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-1.jpg" alt="">
-                <img class="rounded-lg" src="/public/uploads/detal-1.jpg" alt="">
-          </div> -->
-        </div>
+        <div id="pictureWrapper" class="p-5 lg:p-0"></div>
       </section>
     </div>
     <div id="contact">
@@ -435,7 +414,7 @@
     </div>
 
     <div id="loginForm">
-      <div class="flex min-h-full flex-col justify-center mt-32 mb-10 px-6 py-12 lg:px-8">
+      <div class="flex flex-col justify-center min-h-screen px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <img class="mx-auto h-10 w-auto" src="/src/images/M LOGO.png" alt="Your Company">
           <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Zaloguj się do twojego konta</h2>
@@ -454,9 +433,6 @@
             <div>
               <div class="flex items-center justify-between">
                 <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Hasło</label>
-                <div class="text-sm">
-                  <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-                </div>
               </div>
               <div class="mt-2">
                 <input id="password" name="password" type="password" required
@@ -466,7 +442,8 @@
 
             <div>
               <button type="submit"
-                class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Zaloguj się
+                class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                Zaloguj się
               </button>
             </div>
           </form>
@@ -475,36 +452,45 @@
     </div>
 
     <div id="uploadForm">
-      <form id="formId" enctype="multipart/form-data" class="max-w-sm mx-auto">
-        <div class="mt-44">
-          <label for="description" class="block mb-5 text-lg font-medium text-gray-900 dark:text-white">Dodaj zdjęcie i
-            opis</label>
-          <textarea id="description" name="description" placeholder="Enter description..."
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="name@flowbite.com"></textarea>
-        </div>
-        <div class="mb-5">
-          <div class="flex items-center justify-center w-full">
-            <label for="fileInput"
-              class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-              <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg class="w-8 h-8 mb-4  dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="none" viewBox="0 0 20 16">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                </svg>
-                <p class="mb-2 text-sm  dark:text-gray-400"><span class="font-semibold">Click to
-                    upload</span>
-                  or drag and drop</p>
-                <p class="text-xs  dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-              </div>
-              <input id="fileInput" type="file" class="hidden" />
-            </label>
+      <section class="relative top-20 min-h-screen grid grid-cols-2 gap-4 max-w-5xl mx-auto">
+        <form id="formId" enctype="multipart/form-data" class="max-w-sm m-auto col-span-1">
+          <div class="">
+            <label for="description" class="block mb-5 text-lg font-medium text-gray-900 dark:text-white">Dodaj zdjęcie</label>
+            <textarea id="description" name="description" placeholder="Enter description..."
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="name@flowbite.com">
+            </textarea>
           </div>
+          <div class="mb-5">
+            <div class="flex items-center justify-center w-full">
+              <label for="fileInput"
+                class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                  <svg class="w-8 h-8 mb-4  dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 20 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                  </svg>
+                  <p class="mb-2 text-sm  dark:text-gray-400"><span class="font-semibold">Click to
+                      upload</span>
+                    or drag and drop</p>
+                  <p class="text-xs  dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                </div>
+                <input id="fileInput" type="file" class="hidden" />
+              </label>
+            </div>
+          </div>
+          <button type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Wyślij
+          </button>
+        </form>
+        <div class="col-span-1 my-auto">
+          <h1 class="mb-3 text-lg">Lista aktualnych zdjęć:</h1>
+          <div id="pictureList" class="bg-navy-blue overflow-auto h-96">
         </div>
-        <button type="submit"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-      </form>
+        </div>
+      </section>
     </div>
 
   </div>

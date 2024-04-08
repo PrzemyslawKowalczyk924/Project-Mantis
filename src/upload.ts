@@ -24,14 +24,14 @@ document.getElementById('uploadForm')?.addEventListener('submit', (event) => {
         .then(data => {
             const messageElement = document.getElementById('uploadForm');
             if (messageElement) {
-                messageElement.innerHTML = `<p class="">Zdjęcie dodano pomyślnie: ${JSON.stringify(data)}</p>`;
+                messageElement.innerHTML = `<p>Zdjęcie dodano pomyślnie: ${JSON.stringify(data)}</p>`;
             }
         })
         .catch(error => {
             console.error('Error:', error);
             const messageElement = document.getElementById('uploadForm');
             if (messageElement) {
-                messageElement.innerHTML = `<p class="">Wystąpił błąd: ${error.message}</p>`;
+                messageElement.innerHTML = `<p>Wystąpił błąd: ${error.message}</p>`;
             }
         });
     } else {

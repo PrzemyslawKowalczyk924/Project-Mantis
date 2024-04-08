@@ -53,6 +53,10 @@ app.post("/admin/login", upload.none(), (req, res) => {
   }
 });
 
+/* app.get("/admin/imagesList", (req, res) => {
+  imageFolder
+}); */
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/dist/index.html"));
 });

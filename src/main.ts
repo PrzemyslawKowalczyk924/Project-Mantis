@@ -18,6 +18,7 @@ interface App {
     isLoggedIn: boolean;
     initLoginForm: () => void;
     initGallery: () => void;
+    initImageList: () => void;
 }
 
 export const app: App = {
@@ -151,6 +152,7 @@ export const app: App = {
                 })
                     .then(response => {
                         if (response.ok) {
+                            loginForm.classList.toggle('active');
                             return response.json();
                         } else {
                             throw new Error('Upload failed');
@@ -213,6 +215,80 @@ export const app: App = {
                     messageElement.innerHTML = `<p>Error occurred: ${error.message}</p>`;
                 }
             });
+    },
+
+    initImageList: () => {
+        fetch('/image')
+            .then(response => {
+                if (response.ok) {
+                    //respone text????
+                    return response.json();
+                } else {
+                    throw new Error('Upload failed');
+                }
+            })
+            .then(data => {
+
+                const pictureList = document.getElementById('pictureList');
+                if (pictureList !== null) {
+
+                    console.log('data', data)
+                    const imagesListHTML = data.map((item: { value: any; }, index: number) => `
+                        <li class="m-5 flex items-center justify-between border-b-2">
+                            ${index + 1}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                                <title>${item}</title>
+                            </svg>
+                            <p class="">${item}</p>
+                            <button type="button" class="flex">
+                                Usuń
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                </svg>
+                            </button>
+                        </li>
+                    `).join('');
+
+                    pictureList.insertAdjacentHTML('beforeend', `
+                    <ul class="my-1 max-w-5xl mx-auto">
+                        ${imagesListHTML}
+                    </ul>`
+                    )
+                    const svgIcons = pictureList.querySelectorAll('svg');
+                    if (svgIcons !== null) {
+                        svgIcons.forEach((svgIcon) => {
+                            const title = svgIcon.querySelector('title'); // Pobranie tytułu
+                            if (title !== null) {
+                                svgIcon.addEventListener('mouseenter', () => {
+                                    const imagePath = title.textContent; // Pobranie ścieżki obrazka z tytułu
+                                    const imgElement = document.createElement('img');
+                                    imgElement.src = `/uploads/${imagePath}`;
+                                    imgElement.style.position = 'absolute';
+                                    imgElement.style.top = '50%';
+                                    imgElement.style.left = '50%';
+                                    imgElement.style.transform = 'translate(-50%, -50%)';
+                                    imgElement.style.zIndex = '9999';
+                                    document.body.appendChild(imgElement);
+                                });
+                                svgIcon.addEventListener('mouseleave', () => {
+                                    const imgElement = document.querySelector('img');
+                                    if (imgElement) {
+                                        imgElement.remove();
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const messageElement = document.getElementById('message');
+                if (messageElement) {
+                    messageElement.innerHTML = `<p>Error occurred: ${error.message}</p>`;
+                }
+            });
     }
 
 };
@@ -220,3 +296,4 @@ export const app: App = {
 app.init();
 app.initLoginForm();
 app.initGallery();
+app.initImageList();
