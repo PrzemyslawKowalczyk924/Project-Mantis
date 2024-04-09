@@ -29,7 +29,29 @@ app.listen(PORT, () => {
 });
 
 app.post("/admin/image", upload.single('file'), (req, res) => {
-  res.json({success: true});
+  res.json({fileName: req.file.filename});
+});
+
+app.delete("/admin/delete/:fileName", (req, res) => {
+  const fs = require('fs');
+  const path = require('path');
+
+  function deleteFile(fileName) {
+    const filePath = path.join(__dirname, '/public/uploads', fileName);
+    try {
+      // Usunięcie pliku
+      fs.unlinkSync(filePath);
+      console.log(`Plik ${fileName} został pomyślnie usunięty.`);
+      return true; // Zwróć true, jeśli plik został pomyślnie usunięty
+    } catch (error) {
+      console.error(`Błąd podczas usuwania pliku ${fileName}:`, error);
+      return false; // Zwróć false, jeśli wystąpił błąd podczas usuwania pliku
+    }
+  }
+
+  const fileName = req.params.fileName;
+  const deleted = deleteFile(fileName);
+  res.json({ message: `Plik ${deleted} został pomyślnie usunięty.` });
 });
 
 app.get('/image', (req, res) => {

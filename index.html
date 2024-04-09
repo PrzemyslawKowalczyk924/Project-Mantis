@@ -401,12 +401,12 @@
         </div>
         <div class="col-span-1 row-span-1 mb-32 lg:my-auto px-5 sm:py-16 lg:p-0">
           <div class="w-full border-navy-strongBlue border-2 rounded-sm">
-            <iframe title="placeOnMap"
+            <iframe id="gogleMap" title="placeOnMap"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.7446277201693!2d21.141166776907056!3d51.44448361529741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47185895e2490565%3A0x920b8c8d2d101186!2sJana%20Kantego%20Trzebi%C5%84skiego%203%2C%2026-617%20Radom!5e0!3m2!1spl!2spl!4v1712235642993!5m2!1spl!2spl"
               width="100%" height="492" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-            <img title="placeOnMap" class="hidden" src="">
+            <img id="alternative__map" title="placeOnMap" class="hidden" src="/src/images/OpenStreetMap-Mantis.png">
             </img>
           </div>
         </div>
@@ -417,7 +417,8 @@
       <div class="flex flex-col justify-center min-h-screen px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <img class="mx-auto h-10 w-auto" src="/src/images/M LOGO.png" alt="Your Company">
-          <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Zaloguj się do twojego konta</h2>
+          <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Zaloguj się do twojego
+            konta</h2>
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -452,10 +453,12 @@
     </div>
 
     <div id="uploadForm">
-      <section class="relative top-20 min-h-screen grid grid-cols-2 gap-4 max-w-5xl mx-auto">
+      <section
+        class="relative top-20 min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl my-40 lg:my-0 mx-auto">
         <form id="formId" enctype="multipart/form-data" class="max-w-sm m-auto col-span-1">
           <div class="">
-            <label for="description" class="block mb-5 text-lg font-medium text-gray-900 dark:text-white">Dodaj zdjęcie</label>
+            <label for="description" class="block mb-5 text-lg font-medium text-gray-900 dark:text-white">Dodaj
+              zdjęcie</label>
             <textarea id="description" name="description" placeholder="Enter description..."
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="name@flowbite.com">
@@ -486,12 +489,55 @@
           </button>
         </form>
         <div class="col-span-1 my-auto">
-          <h1 class="mb-3 text-lg">Lista aktualnych zdjęć:</h1>
+          <h1 class="my-10 text-lg">Lista aktualnych zdjęć:</h1>
           <div id="pictureList" class="bg-navy-blue overflow-auto h-96">
-        </div>
+          </div>
         </div>
       </section>
     </div>
+
+    <div id="privacyPolicy">
+      <section class="relative top-20 min-h-screen max-w-5xl mx-auto grid grid-cols-1 gap-2 p-20">
+        <h2 class="text-3xl font-bold mb-10">Polityka Prywatności</h2>
+        <p class="text-justify px-14 mb-10">Niniejsza polityka prywatności informuje użytkowników o zasadach korzystania z plików cookie oraz o
+          zapewnieniu prywatności podczas korzystania z usług Google Maps na naszej stronie internetowej. Prosimy o
+          zapoznanie się z poniższymi informacjami.</p>
+        <ol class="list-decimal text-justify px-14">
+          <li>Pliki cookie Google Maps: Nasza strona korzysta z usług Google Maps w celu dostarczenia interaktywnych map
+            i lokalizacji. Google Maps używa różnych rodzajów plików cookie, które mogą być przechowywane w przeglądarce
+            użytkownika. Pliki cookie Google Maps są wykorzystywane do zapamiętywania preferencji użytkownika, takich
+            jak poziom powiększenia mapy, preferowany język, zapamiętane lokalizacje itp. Te pliki cookie są ustawiane
+            tylko wtedy, gdy użytkownik wyrazi na to zgodę.</li>
+          <li>Zgoda na pliki cookie: Po pierwszym wejściu na naszą stronę internetową użytkownik zostanie poinformowany
+            o wykorzystaniu plików cookie Google Maps i zostanie poproszony o wyrażenie zgody na ich użycie. Użytkownik
+            będzie miał możliwość kliknięcia przycisku "OK" lub "Anuluj", wyrażając lub niezgadzając się na korzystanie
+            z tych plików cookie.</li>
+          <li>Zapamiętanie wyboru użytkownika: Jeśli użytkownik wyrazi zgodę na korzystanie z plików cookie Google Maps,
+            zostanie ustawione odpowiednie ciasteczko w przeglądarce, które będzie zapamiętywać tę decyzję. Dzięki temu
+            użytkownik nie będzie ponownie pytany o zgodę przy kolejnych wizytach na stronie.</li>
+          <li>Brak zgody na pliki cookie: Jeśli użytkownik nie wyrazi zgody na korzystanie z plików cookie Google Maps,
+            na naszej stronie zostanie wyświetlone statyczne zdjęcie zamiast interaktywnej mapy. W takim przypadku nie
+            będą generowane żadne pliki cookie związane z usługą Google Maps ani żadne inne.</li>
+          <li>Bezpieczeństwo i prywatność: Zobowiązujemy się do zapewnienia odpowiednich środków bezpieczeństwa i
+            ochrony prywatności danych użytkowników. Pliki cookie Google Maps są używane wyłącznie w celu zapewnienia
+            optymalnego doświadczenia korzystania z usługi i nie są wykorzystywane w celach śledzenia ani gromadzenia
+            danych osobowych.</li>
+          <li>Kontrola plików cookie: Użytkownik ma możliwość kontrolowania i zarządzania plikami cookie w swojej
+            przeglądarce. Może zablokować lub usunąć pliki cookie związane z usługą Google Maps lub skonfigurować
+            przeglądarkę tak, aby zablokowała wszystkie pliki cookie. Należy jednak pamiętać, że blokowanie plików
+            cookie może wpłynąć na niektóre funkcje.</li>
+        </ol>
+      </section>
+    </div>
+
+    <div id="modal" class="fadeInUp fixed hidden justify-center items-center text-white right-auto sm:right-8 bottom-8 shadowHalogenEffect font-medium max-w-[600px] max-h-[200px] bg-navy-middleBlue p-4 z-50">
+      <img class="w-12 h-12 filter brightness-0 invert mx-auto mb-2" src="/public/icons/cookie-bite-solid.svg" alt="ciasteczko" loading="lazy"/>
+      <span class="text-xs md:text-sm font-bold">W celu świadczenia usług na najwyższym poziomie stosujemy pliki cookies. Mogą państwo zmienić ustawienia przeglądarki w celu wyłączenia plików cookies. Więcej szczegółów znajdą państwo w naszej <a class="modal__and__footerPrivacy" href="#privacy-policy">polityce prywatności</a>.</span>
+      <div class="button-wrapper flex flex-col-reverse justify-center items-center font-bold">
+          <button id="modal-button" class="hover:border hover:border-double border w-16 h-16 hover:bg-navy-blue text-base pt-1 hover:border-gray-700 text-white hover:text-navy-middleBlue bg-gray-700 top-0 cursor-pointer m-1 modal-button">OK</button>
+          <button id="modal-button-negative" class="hover:border hover:border-double border w-16 h-12 hover:bg-navy-blue hover:border-gray-700 text-white hover:text-navy-middleBlue cursor-pointer text-xs bg-gray-700 modal-button-negative">Anuluj</button>
+      </div>
+  </div>
 
   </div>
   <footer class="bg-white lg:top-20 relative dark:bg-gray-900 shadowTopOnly z-20">
@@ -529,10 +575,10 @@
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
             <ul class=" dark:text-gray-400 font-medium">
               <li class="mb-4">
-                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Polityka Prywatności</a>
               </li>
               <li>
-                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                <a href="#" class="hover:underline">Regulamin</a>
               </li>
             </ul>
           </div>
@@ -595,6 +641,7 @@
   <script async defer type="module" src="/src/main.ts"></script>
   <script async defer type="module" src="/src/upload.ts"></script>
   <script async defer type="module" src="/src/settings.ts"></script>
+  <script async defer type="module" src="/src/modal.ts"></script>
 </body>
 
 </html>

@@ -111,6 +111,7 @@
 }
 
 @layer components {}
+
 @layer utilities {
 
   .backgroundForHero {
@@ -163,6 +164,16 @@
   .hover-zmiana {
     content: url('/public/uploads/statek.png');
     border-radius: 100%;
+  }
+
+  .fadeInUp{
+    animation:fadeInUp 1s ease backwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes fadeInUp{
+    0%{transform:translate(0px, 100px); opacity: 0;}
+    100%{transform:translate(0px, 0); opacity: 100%;}
   }
 
 }
