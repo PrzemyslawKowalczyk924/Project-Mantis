@@ -29,10 +29,10 @@ app.listen(PORT, () => {
 });
 
 app.post("/admin/image", upload.single('file'), (req, res) => {
-  res.json({fileName: req.file.filename});
+  res.json({fileName: req.file.filename, description: req.body.description});
 });
 
-app.delete("/admin/delete/:fileName", (req, res) => {
+app.delete("/admin/image/:fileName", (req, res) => {
   const fs = require('fs');
   const path = require('path');
 

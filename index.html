@@ -426,7 +426,7 @@
             <div>
               <label for="login" class="block text-sm font-medium leading-6 text-gray-900">Login</label>
               <div class="mt-2">
-                <input id="login" name="login" type="text" required
+                <input id="login" name="login" type="text" required autocomplete="username"
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
               </div>
             </div>
@@ -436,7 +436,7 @@
                 <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Hasło</label>
               </div>
               <div class="mt-2">
-                <input id="password" name="password" type="password" required
+                <input id="password" name="password" type="password" autocomplete="off"
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
               </div>
             </div>
@@ -459,16 +459,15 @@
           <div class="">
             <label for="description" class="block mb-5 text-lg font-medium text-gray-900 dark:text-white">Dodaj
               zdjęcie</label>
-            <textarea id="description" name="description" placeholder="Enter description..."
+            <textarea id="description" name="description" placeholder="Nazwa.."
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="name@flowbite.com">
-            </textarea>
+              placeholder="name@flowbite.com"/></textarea>
           </div>
           <div class="mb-5">
             <div class="flex items-center justify-center w-full">
               <label for="fileInput"
                 class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <div id="pcitureViewer" class="flex flex-col items-center justify-center pt-5 pb-6">
                   <svg class="w-8 h-8 mb-4  dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     fill="none" viewBox="0 0 20 16">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -479,7 +478,7 @@
                     or drag and drop</p>
                   <p class="text-xs  dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                 </div>
-                <input id="fileInput" type="file" class="hidden" />
+                <input id="fileInput" type="file" class="hidden" autocomplete="off"/>
               </label>
             </div>
           </div>
