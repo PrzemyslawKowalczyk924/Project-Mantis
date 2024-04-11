@@ -8,8 +8,12 @@ export const select = {
         links: '#navigation a',
         /* hamburgerLinks: '.hamburger__links a:not(.icon)' */
       },
+    mainLinks: {
+        heroLinks: '#main .hero a',
+        galleryLink: '#main .precision a'
+    },
     privacyPolicy: {
-        modalAndFootHref: '.modal__and__footerPrivacy',
+        modalAndFootHref: '#modal__and__footerPrivacy',
     }
 };
 

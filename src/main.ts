@@ -7,11 +7,13 @@ import 'flowbite';
 import { select, classNames } from './settings.js';
 
 interface App {
+    galleryLink: HTMLElement | HTMLAnchorElement | undefined | null | object;
     hamburgerDropDownMenu: HTMLElement | undefined;
     hamburgerButton: HTMLElement | undefined;
     pages: HTMLElement[];
     navLinks: NodeListOf<HTMLAnchorElement> | undefined;
     privacyPolicyLinks: NodeListOf<HTMLAnchorElement> | undefined;
+    heroLinks: NodeListOf<HTMLAnchorElement> | undefined;
     initPages: () => void;
     activatePage: (pageId: string) => void;
     init: () => void;
@@ -27,8 +29,10 @@ export const app: App = {
     navLinks: undefined,
     hamburgerButton: undefined,
     privacyPolicyLinks: undefined,
+    heroLinks: undefined,
     isLoggedIn: false,
     hamburgerDropDownMenu: undefined,
+    galleryLink: undefined,
 
     initPages: function () {
         const thisApp = this;
@@ -42,7 +46,10 @@ export const app: App = {
 
         thisApp.navLinks = document.querySelectorAll(select.nav.links);
         thisApp.privacyPolicyLinks = document.querySelectorAll(select.privacyPolicy.modalAndFootHref);
+        thisApp.heroLinks = document.querySelectorAll(select.mainLinks.heroLinks);
+        thisApp.galleryLink = document.querySelector(select.mainLinks.galleryLink);
 
+        console.log(thisApp.galleryLink instanceof HTMLAnchorElement);
 
         const idFromHash = window.location.hash.replace('#/', '');
 
@@ -103,6 +110,35 @@ export const app: App = {
                 }
             });
         }
+        for (let link of thisApp.heroLinks) {
+            link.addEventListener('click', function (event: MouseEvent): void {
+                const clickedHeroLink = this;
+                event.preventDefault();
+
+                if (clickedHeroLink !== null) {
+
+                    const id = clickedHeroLink.getAttribute('href')?.replace('#', '') ?? '';
+
+                    window.location.hash = '#/' + id;
+                    thisApp.activatePage(id);
+                }
+            });
+        }
+        if (thisApp.galleryLink) {
+
+            (thisApp.galleryLink as HTMLAnchorElement).addEventListener('click', function (event: MouseEvent): void {
+                const clickedHeroLink = this;
+                event.preventDefault();
+    
+                if (clickedHeroLink !== null) {
+    
+                    const id = clickedHeroLink.getAttribute('href')?.replace('#', '') ?? '';
+    
+                    window.location.hash = '#/' + id;
+                    thisApp.activatePage(id);
+                }
+            });
+        }
     },
 
     activatePage: function (pageId) {
@@ -121,6 +157,7 @@ export const app: App = {
         } else {
             console.error("navLinks is undefined!");
         }
+        window.scrollTo(0, 0);
     },
 
     init: function () {
@@ -201,7 +238,7 @@ export const app: App = {
                 const pictureWrapper = document.getElementById('pictureWrapper');
                 if (pictureWrapper !== null) {
 
-                    console.log('data', data)
+                    console.log('data', data);
                     const imagesHTML = data.map((image: { value: any; }) => `
                         <img name="${image}" class="border-2 border-navy-strongBlue rounded-xl first:mt-0 mt-5 lg:mt-8" src="/uploads/${image}" alt="">
                     `).join('');
@@ -211,7 +248,7 @@ export const app: App = {
                     <div class="my-20 max-w-5xl mx-auto columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4">
                         ${imagesHTML}
                     </div>`
-                    )
+                    );
 
                 }
             })
@@ -226,21 +263,21 @@ export const app: App = {
 
     initImageList: () => {
         fetch('/image')
-        .then(response => {
-            if (response.ok) {
-                //respone text????
-                return response.json();
-            } else {
-                throw new Error('Upload failed');
-            }
-        })
-        .then(data => {
+            .then(response => {
+                if (response.ok) {
+                    //respone text????
+                    return response.json();
+                } else {
+                    throw new Error('Upload failed');
+                }
+            })
+            .then(data => {
 
-            const pictureList = document.getElementById('pictureList');
-            if (pictureList !== null) {
+                const pictureList = document.getElementById('pictureList');
+                if (pictureList !== null) {
 
-                console.log('data', data)
-                const imagesListHTML = data.map((item: { value: any; }, index: number) => `
+                    console.log('data', data);
+                    const imagesListHTML = data.map((item: { value: any; }, index: number) => `
                     <li class="m-5 flex items-center justify-between border-b-2">
                         ${index + 1}
                         <img class="w-6 h-6" src="/uploads/${item}" alt="">
@@ -254,53 +291,54 @@ export const app: App = {
                     </li>
                 `).join('');
 
-                pictureList.insertAdjacentHTML('beforeend', `
+                    pictureList.insertAdjacentHTML('beforeend', `
                 <ul class="my-1 max-w-5xl mx-auto">
                     ${imagesListHTML}
                 </ul>`
-                )
-                
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            const messageElement = document.getElementById('message');
-            if (messageElement) {
-                messageElement.innerHTML = `<p>Error occurred: ${error.message}</p>`;
-            }
-        });
+                    );
+
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const messageElement = document.getElementById('message');
+                if (messageElement) {
+                    messageElement.innerHTML = `<p>Error occurred: ${error.message}</p>`;
+                }
+            });
     },
 
     initRemoveImage: () => {
         function deleteImage(fileName: string | HTMLElement | null) {
             fetch(`/admin/image/${fileName}`, {
-              method: 'DELETE'
+                method: 'DELETE'
             })
-            .then(response => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error('Usuwanie nie powiodło się');
-              }
-            })
-            .then(data => {
-              console.log(data.message); // Wyświetlenie komunikatu zwrotnego po usunięciu zdjęcia
-              // Tutaj możesz dodać dodatkową logikę po usunięciu zdjęcia, jeśli jest to konieczne
-            })
-            .catch(error => {
-              console.error('Błąd podczas usuwania zdjęcia:', error);
-            });
-        
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Usuwanie nie powiodło się');
+                    }
+                })
+                .then(data => {
+                    console.log(data.message); // Wyświetlenie komunikatu zwrotnego po usunięciu zdjęcia
+
+                    // Tutaj możesz dodać dodatkową logikę po usunięciu zdjęcia, jeśli jest to konieczne
+                })
+                .catch(error => {
+                    console.error('Błąd podczas usuwania zdjęcia:', error);
+                });
+
         }
 
-        const pictureList = document.getElementById('pictureList'); 
+        const pictureList = document.getElementById('pictureList');
         pictureList?.addEventListener('click', (event) => {
             console.log('pictureList', event);
-            if((event.target as HTMLElement).classList.contains('remove')) {
+            if ((event.target as HTMLElement).classList.contains('remove')) {
                 const chosenImageToDelate = (event.target as HTMLButtonElement).getAttribute('name');
-                if(chosenImageToDelate && confirm('Czy na pewno chcesz usunąć to zdjęcie?')) {
+                if (chosenImageToDelate && confirm('Czy na pewno chcesz usunąć to zdjęcie?')) {
                     deleteImage(chosenImageToDelate);
-                    if(event.target) {
+                    if (event.target) {
                         // @ts-ignore we know this element exists
                         event.target.parentNode.remove();
                     }
@@ -309,9 +347,8 @@ export const app: App = {
                 }
             }
         });
-     
-    }
 
+    },
 };
 
 app.init();

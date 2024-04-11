@@ -87,7 +87,17 @@ document.getElementById('uploadForm')?.addEventListener('submit', (event) => {
     }
 });
 
-/* document.getElementById('pictureView')?.addEventListener('change', () => {
+document.getElementById('fileInput')?.addEventListener('change', () => {
+    console.log('File input or description input');
     const pictureView = document.getElementById('pcitureViewer');
-    (pictureView!.innerHTML as String) = `<p>Załadowano pomyślnie</p>`;
-}); */
+    (pictureView!.innerHTML as String) = `
+    <div class="flex flex-col items-center justify-center pt-5 pb-6 min-w-64 max-w-64">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 mb-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+        <p class="mb-2 text-sm  dark:text-gray-400">
+            <span class="font-semibold">Załadowano pomyślnie</span>
+        </p>
+    </div>
+    `;
+});
