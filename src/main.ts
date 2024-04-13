@@ -2,6 +2,13 @@ import './index.css';
 import 'flowbite';
 //import tailwindcss from 'tailwindcss'
 
+import {
+    Carousel,
+    initTWE,
+  } from "tw-elements";
+  
+  initTWE({ Carousel });
+
 // navigation
 
 import { select, classNames } from './settings.js';
