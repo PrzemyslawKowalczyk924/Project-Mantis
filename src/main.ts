@@ -1,13 +1,9 @@
 import './index.css';
 import 'flowbite';
+//import 'animejs/lib/anime.es.js';
+import anime from 'animejs/lib/anime.es.js';
+//const anime = require('animejs');
 //import tailwindcss from 'tailwindcss'
-
-import {
-    Carousel,
-    initTWE,
-  } from "tw-elements";
-  
-  initTWE({ Carousel });
 
 // navigation
 
@@ -363,3 +359,123 @@ app.initLoginForm();
 app.initGallery();
 app.initImageList();
 app.initRemoveImage();
+
+/* const imageToChange = document.querySelector('.imageChange') as HTMLImageElement;
+
+console.log(imageToChange)
+
+if(imageToChange) {
+    const newSrcHover = "/public/uploads/boat-worker.jpg";
+    const orginalSrc = imageToChange.src;
+
+    imageToChange.addEventListener('mouseover', () => {
+        console.log('mouseOver');
+        imageToChange.src = newSrcHover;
+    });
+
+    imageToChange.addEventListener('mouseout', () => {
+        console.log('mouseOut');
+        imageToChange.src = orginalSrc;
+    });
+} else {
+    console.error('Nie można znaleźć elementu o id="imageChange"');
+} */
+
+/* const changeImageOnInView = () => {
+    const imagesToChange = document.querySelectorAll<HTMLImageElement>('.imageChange');
+    
+    console.log(imagesToChange);
+
+    let options = {
+        root: document.getElementById("exp"),
+        rootMargin: "0px",
+        threshold: 1.0,
+      };
+      console.log(options);
+    
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const image = entry.target as HTMLImageElement;
+                console.log(image);
+                const newSrcHover = "/public/uploads/boat-worker.jpg";
+                const oldSrcHover = "/src/images/dyplom.png";
+                console.log(image);
+                if (newSrcHover) {
+                    image.src = newSrcHover;
+                    console.log('intersekting');
+                } else {
+                    image.src = oldSrcHover;
+                    console.log('none intersketing');
+                }
+                observer.unobserve(image);
+            }
+        });
+    }, options);
+
+    imagesToChange.forEach(image => {
+        observer.observe(image);
+    });
+};
+
+// Wywołanie funkcji przygotowującej zmianę zdjęcia w widoku
+changeImageOnInView(); */
+
+
+const numSteps = 20.0;
+let prevRatio = 0.0;
+
+window.addEventListener("load", () => {
+  const imageElements = document.querySelectorAll(".imageChange");
+  createObservers(imageElements);
+});
+
+function createObservers(imageElements: NodeListOf<Element>) {
+  const options = {
+    root: null,
+    rootMargin: "-200px",
+    threshold: buildThresholdList(),
+  };
+
+  imageElements.forEach((imageElement) => {
+    const observer = new IntersectionObserver(handleIntersectImage, options);
+    observer.observe(imageElement);
+  });
+}
+
+function buildThresholdList() {
+  const thresholds = [];
+  const numSteps = 1;
+
+  for (let i = 1.0; i <= numSteps; i++) {
+    const ratio = i / numSteps;
+    thresholds.push(ratio);
+  }
+
+  thresholds.push(0);
+  return thresholds;
+}
+
+function handleIntersectImage(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
+  entries.forEach((entry) => {
+    const { target } = entry;
+    const newSrcHover = target.getAttribute("data-new-src");
+    const oldSrcHover = target.getAttribute("data-old-src");
+
+    if (entry.intersectionRatio > prevRatio) {
+      target.setAttribute("src", newSrcHover);
+    } else if (entry.intersectionRatio < prevRatio) {
+      target.setAttribute("src", oldSrcHover);
+    }
+
+    prevRatio = entry.intersectionRatio;
+  });
+}
+
+/* anime({
+    targets: '.imageChange',
+    translateX: 250,
+    rotate: '1turn',
+    backgroundColor: '#FFF',
+    duration: 800
+  }); */
